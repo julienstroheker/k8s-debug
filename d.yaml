@@ -2,7 +2,15 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: shell-demo
+  namespace: osa-containerservice
 spec:
+  selector:
+    matchLabels:
+      app: containerservice
+  template:
+    metadata:
+      labels:
+        app: containerservice
   containers:
   - name: nginx
     image: nginx
@@ -11,6 +19,6 @@ spec:
       name: k8s-azure-file
       readOnly: true
   volumes:
-  - name: k8s-azure-file
-    hostPath:
-      path: /etc/kubernetes/azure.json
+    - name: k8s-azure-file
+      hostPath:
+        path: /etc/kubernetes/azure.json
