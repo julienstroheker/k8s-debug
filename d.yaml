@@ -4,8 +4,9 @@ metadata:
   name: shell-demo
 spec:
   volumes:
-  - name: shared-data
-    emptyDir: {}
+  - name: k8s-azure-file
+      hostPath:
+        path: /etc/kubernetes/azure.json
   containers:
   - name: nginx
     image: nginx
@@ -13,7 +14,3 @@ spec:
     - mountPath: /etc/kubernetes/azure.json
       name: k8s-azure-file
       readOnly: true
-  volumes:
-    - name: k8s-azure-file
-      hostPath:
-        path: /etc/kubernetes/azure.json
