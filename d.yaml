@@ -4,13 +4,6 @@ metadata:
   name: shell-demo
   namespace: osa-containerservice
 spec:
-  selector:
-    matchLabels:
-      app: containerservice
-  template:
-    metadata:
-      labels:
-        app: containerservice
   containers:
   - name: nginx
     image: nginx
