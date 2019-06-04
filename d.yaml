@@ -13,3 +13,7 @@ spec:
     - mountPath: /etc/kubernetes/azure.json
       name: k8s-azure-file
       readOnly: true
+  volumes:
+    - name: k8s-azure-file
+      hostPath:
+        path: /etc/kubernetes/azure.json
