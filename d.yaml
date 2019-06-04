@@ -5,8 +5,8 @@ metadata:
 spec:
   volumes:
   - name: k8s-azure-file
-      hostPath:
-        path: /etc/kubernetes/azure.json
+    hostPath:
+      path: /etc/kubernetes/azure.json
   containers:
   - name: nginx
     image: nginx
