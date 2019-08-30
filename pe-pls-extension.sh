@@ -65,7 +65,7 @@ if [ $mode == 'pe' ]; then
 #!/bin/bash
 while [ true ]
 do
-    curl -s -o /dev/null -w "$(date) - Status: %{http_code}\n" $1 >> /var/www/html/index.html
+    curl -s -o /dev/null -w "$(date) - Status: %{http_code}\n<br>" $1 >> /var/www/html/index.html
     sleep 10
 done
 EOF
