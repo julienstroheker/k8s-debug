@@ -61,7 +61,7 @@ if [ $mode == 'pe' ]; then
     echo "### - touch /var/www/html/index.html - ###"
     echo "Ping service started on " $HOSTNAME " ! Pinging : " $ip | sudo tee -a /var/www/html/index.html
     echo "### - create ping.sh into /tmp - ###"
-    cat <<EOF > /tmp/ping.sh
+    cat <<'EOF' > /tmp/ping.sh
 #!/bin/bash
 while [ true ]
 do
