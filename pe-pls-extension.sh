@@ -71,7 +71,7 @@ done
 EOF
     chmod 777 /tmp/ping.sh
     echo "### - Starting ping script - ###"
-    ./tmp/ping.sh $ip &
+    /tmp/ping.sh $ip &
     echo "----> PE MODE - Done"
 fi
 if [ $mode == 'pls' ]; then
