@@ -59,13 +59,14 @@ if [ $mode == 'pe' ]; then
     apt-get update -y && apt-get upgrade -y
     apt-get install -y nginx
     echo "### - touch /var/www/html/index.html - ###"
-    echo "Ping service started on " $HOSTNAME " ! Pinging : " $ip | sudo tee -a /var/www/html/index.html
+    echo "Ping service started on " $HOSTNAME " ! Pinging : " $ip "<br>" | sudo tee -a /var/www/html/index.html
     echo "### - create ping.sh into /tmp - ###"
     cat <<'EOF' > /tmp/ping.sh
 #!/bin/bash
 while [ true ]
 do
-    curl -s -o /dev/null -w "$(date) - Status: %{http_code}\n<br>" $1 >> /var/www/html/index.html
+    curl -s -o /dev/null -w "$(date) - Status: %{http_code}\n" $1 >> /var/www/html/index.html
+    echo "<br>" >> /var/www/html/index.html
     sleep 10
 done
 EOF
